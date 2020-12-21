@@ -20,6 +20,8 @@ def _helper(main, temp, start, end):
     '''
     We want to eventually return the main array so we put temp at the parameter of the main array
     At every recursive call, it will change so that we don't lose our reference to the main array
+    We will use the main array to store the sorted value and temp array to store value need to be sorted,
+    Which means we will sort element in the temp array and then store them in the main array
     '''
     _helper(temp, main, start, mid)     #dividing left half
     _helper(temp, main, mid+1, end)     #dividing right half
