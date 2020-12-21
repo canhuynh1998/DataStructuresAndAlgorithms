@@ -19,11 +19,8 @@ def Insertion(array):
     return array
 
 if __name__ == "__main__":
-    testArr, correctArr = [], []
-    for i in range(11):
-        num = random.randint(0,10)
-        testArr.append(num)
-        correctArr.append(num)
+    testArr = [random.randint(0,11) for _ in range(10)]
+    correctArr = testArr.copy()
 
     assert Insertion(testArr) == sorted(correctArr)
     print('Correct!!')
