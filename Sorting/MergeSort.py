@@ -25,7 +25,7 @@ def _helper(main, temp, start, end):
     '''
     _helper(temp, main, start, mid)     #dividing left half
     _helper(temp, main, mid+1, end)     #dividing right half
-    _merge(main, temp, start, mid, end)
+    _merge(main, temp, start, mid, end) #merge 2 sub array
 
 def _merge(main, temp, start, mid, end):
     left, index = start, start
