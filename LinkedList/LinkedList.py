@@ -94,3 +94,47 @@ class LinkedList:
         newNode = Node(value)
         current.next = newNode
         self.length += 1
+
+    def deleteFront(self):
+        '''
+        Delete the beginning node of the list
+        '''
+        if self.head is None:
+            print("The list is empty")
+            return
+        deleted = self.head
+        self.head = self.head.next
+        deleted.next = None
+        self.length -= 1
+    
+    def deleteAtPosition(self, position):
+        '''
+        Delete the node at position-th
+        '''
+        if self.head is None:
+            print("The list is empty")
+            return
+        if position > self.length:
+            print("Out of bound")
+            return
+
+        current = self.head
+        while position > 1:
+            current = current.next
+            position -= 1
+        nextnode = current.next.next if current.next.next is not None else None
+        current.next = None
+        current.next = nextnode
+        self.length -= 1
+    
+    def deleteEnd(self):
+        '''
+        Delete at the end of the linked list
+        '''
+        if self.head is None:
+            print("The list is empty")
+            return
+        current = self.head
+        while current.next.next is not None:
+            current = current.next
+        current.next = None
