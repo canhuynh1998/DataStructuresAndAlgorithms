@@ -11,6 +11,7 @@ class Node:
 class BST:
     def __init__(self):
         self.root = None
+        self.length = 0
     
     def search(self, value):
         if self.root is None:
@@ -30,6 +31,7 @@ class BST:
     def insert(self, value):
         if self.root is None:
             self.root = Node(value)
+            self.length += 1
             return
         current = self.head
         while True:
@@ -45,6 +47,7 @@ class BST:
                     break
                 else:
                     current = current.right
+        self.length += 1
         return 
 
     def minValue(self):
